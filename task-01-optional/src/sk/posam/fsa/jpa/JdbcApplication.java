@@ -16,9 +16,10 @@ public class JdbcApplication {
 
         try{
             connection = DriverManager.getConnection(url, user, password);
-            //pocetHercov(connection);
-            ///zoznamHercov(connection);
-            //najdiHercaPodlaId(123, connection);
+            pocetHercov(connection);
+            zoznamHercov(connection);
+            //nevypisujem lebo to nebolo zadane, ale nizsie je priklad toho akoby som ho vypisal
+            najdiHercaPodlaId(123, connection);
 
 /*
             //Pre overenie
