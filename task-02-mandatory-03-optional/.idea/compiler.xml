@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jpa01" />
-        <module name="task-02-mandatory" />
+        <module name="task-02-mandatory-03-optional" />
       </profile>
     </annotationProcessing>
   </component>
