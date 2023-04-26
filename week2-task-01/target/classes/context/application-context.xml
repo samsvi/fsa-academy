@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       "
+>
+    <import resource="ctx-database.xml"/>
+
+    <bean id="country" class="sk.posam.fsa.spring.domain.Country">
+        <property name="country" value="Slovensko" />
+    </bean>
+
+    <bean id="city" class="sk.posam.fsa.spring.domain.City">
+        <property name="cityName" value="Bratislava" />
+        <property name="country" ref="country"/>
+    </bean>
+
+    <bean id="cityConstructor" class="sk.posam.fsa.spring.domain.City">
+        <constructor-arg name="numberOfPeople" value="150000" />
+        <constructor-arg name="cityName" value="Kosice" />
+    </bean>
+
+    <bean id="address" class="sk.posam.fsa.spring.domain.Address">
+        <property name="postalCode" value="84104" />
+        <property name="addressId" value="1000" />
+        <property name="city" ref="city"/>
+    </bean>
+
+</beans>
